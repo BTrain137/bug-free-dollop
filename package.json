@@ -1,0 +1,23 @@
+{
+  "name": "bug-free-dollop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryan89tran/bug-free-dollop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bryan89tran/bug-free-dollop/issues"
+  },
+  "homepage": "https://github.com/bryan89tran/bug-free-dollop#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
