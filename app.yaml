@@ -1,0 +1,5 @@
+# [START app_yaml]
+runtime: nodejs12
+env_variables:
+  NODE_ENV: production
+# [END app_yaml]

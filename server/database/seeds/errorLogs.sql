@@ -1,0 +1,20 @@
+USE `fitlife`;
+
+INSERT INTO `error_order_logs` (`customer_id`, `customer_email`, `action`, `route`, `notes`, `json_data`)
+VALUES (52835187, "zack.mccormack@knights.ucf.edu",	"processRecurringOrder", "/recharge/order/created",	"Order Probably Not Tagged", '{"recharge_order_id":206620948,"shopify_order_id":"2571539578927","error":{},"errorMessage":"Cannot read property \'split\' of null"}');
+
+INSERT INTO `error_order_logs` (`customer_id`, `customer_email`, `action`, `route`, `notes`, `json_data`)
+VALUES (52833741, "hunter.kimali@gmail.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206635891,"shopify_order_id":"2571586469935","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52834182, "kristina.belle21@gmail.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206633794,"shopify_order_id":"2571581063215","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(53529826, "s.gordon1993@gmail.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206629730,"shopify_order_id":"2571569430575","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52834472, "mjkranzler@gmail.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206629501,"shopify_order_id":"2571568873519","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52835157, "whit.porter09@gmail.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206628006,"shopify_order_id":"2571563827247","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52833078, "brainarnp@gmail.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206627924,"shopify_order_id":"2571563597871","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52834017, "jtorres@marcoscustomcabinetry.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206626637,"shopify_order_id":"2571559239727","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52833930, "jlopez670@yahoo.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206626628,"shopify_order_id":"2571559206959","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52834602, "oblechner@gmail.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206624827,"shopify_order_id":"2571552620591","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(53385061, "dan.derrico321@gmail.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206624466,"shopify_order_id":"2571551375407","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52833243, "clarke1827@gmail.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206623670,"shopify_order_id":"2571548426287","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(53107279, "tabathacarlson@icloud.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206623534,"shopify_order_id":"2571548065839","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52835088, "TRUBACKY@COMCAST.NET",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206622689,"shopify_order_id":"2571545641007","error":{},"errorMessage":"Cannot read property \'split\' of null"}'),
+(52833094, "breim@titusbuild.com",	"processRecurringOrder",	"/recharge/order/created",	"Order Probably Not Tagged",	'{"recharge_order_id":206622145,"shopify_order_id":"2571542921263","error":{},"errorMessage":"Cannot read property \'split\' of null"}');

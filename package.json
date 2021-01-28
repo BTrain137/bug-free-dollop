@@ -1,23 +1,51 @@
 {
-  "name": "bug-free-dollop",
+  "name": "shopify-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/server.js",
+  "description": "shopify app and Recharge Proxy",
+  "main": "server/app.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cookie": "^0.4.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "lz-string": "^1.4.4",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "nonce": "^1.0.4",
+    "recharge-api-node": "^1.1.4",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "shopify-api-node": "^3.4.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.1"
+  },
   "scripts": {
-    "start": "node ./src/index.js",
+    "client": "cd client && npm start",
+    "build:client": "cd client && npm run build && cd ..",
+    "deploy": "npm run build:client && gcloud app deploy ./app.yaml --project=fitlife-shopify-prod",
+    "deploy-cron": "gcloud app deploy ./cron.yaml --project=fitlife-shopify-prod",
+    "install": "cd client && npm install",
+    "log": "gcloud app --project=fitlife-shopify-prod logs tail -s default",
+    "log-1000": "gcloud app --project=fitlife-shopify-prod logs read --limit=1000",
+    "development": "NODE_ENV=development concurrently \"nodemon --ignore 'client/*' ./server/app.js \" \"npm run client\"",
+    "dev:server": "NODE_ENV=development nodemon --ignore 'client/*' ./server/app.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*' ./server/app.js \" \"nodemon --watch client/src --exec 'npm run build:client'\"",
+    "start:prod": "node ./server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bryan89tran/bug-free-dollop.git"
+    "url": "git+https://github.com/BTrain137/fitlife-shopify-app.git"
   },
-  "author": "",
+  "author": "chelseaandrachel.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bryan89tran/bug-free-dollop/issues"
+    "url": "https://github.com/BTrain137/fitlife-shopify-app/issues"
   },
-  "homepage": "https://github.com/bryan89tran/bug-free-dollop#readme",
-  "dependencies": {
-    "axios": "^0.19.2"
-  }
+  "homepage": "https://github.com/BTrain137/fitlife-shopify-app#readme"
 }

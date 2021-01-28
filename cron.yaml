@@ -1,0 +1,92 @@
+# https://cloud.google.com/appengine/docs/flexible/nodejs/scheduling-jobs-with-cron-yaml
+cron:
+# Meals
+- description: "Running only differences on a regular bases"
+  url: /api/meals/swap-all-meals
+  schedule: every 1 hours from 03:00 to 22:45
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+- description: "Short Internal Night before midnight"
+  url: /api/meals/swap-all-meals
+  schedule: every 15 minutes from 23:00 to 23:45
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+- description: "Short Internal after midnight until 1 am"
+  url: /api/meals/swap-all-meals
+  schedule: every day 00:05 
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+
+# Order
+- description: "Rerun order with 'Order Probably Not Tagged' notes"
+  url: /api/orders/re-run-untagged-orders
+  schedule: every 15 minutes
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+
+# Long meals
+
+- description: "Run the long meals swaps"
+  url: /api/meals/swap-all-meals-long
+  schedule: every sunday 01:00
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+
+- description: "Run the long meals swaps"
+  url: /api/meals/swap-all-meals-long
+  schedule: every monday 01:00
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+
+- description: "Run the long meals swaps"
+  url: /api/meals/swap-all-meals-long
+  schedule: every tuesday 01:00
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+
+- description: "Run the long meals swaps"
+  url: /api/meals/swap-all-meals-long
+  schedule: every friday 01:00
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+
+- description: "Run the long meals swaps"
+  url: /api/meals/swap-all-meals-long
+  schedule: every saturday 01:00
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+
+- description: "Adding in sweat and delight for orders"
+  url: /api/meals/add-sweat-and-delight-order
+  schedule: every tue 22:00
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+
+- description: "Moving skipped meals up"
+  url: /api/meals/move-charge-date-for-skipped-week
+  schedule: every wed 00:00
+  timezone: America/New_York
+  retry_parameters:
+    job_retry_limit: 2
+    min_backoff_seconds: 120
+
